@@ -97,7 +97,7 @@ If you'd like to contribute to `RWikiLinks`, feel free to open an issue or submi
 
 ## License
 
-RwikiLinks is available under the MIT License. See the [LICENSE](LICENSE) file for more details.
+`RWikiLinks` is available under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 
@@ -107,4 +107,4 @@ If you have any questions or need help, feel free to open an issue on GitHub or 
 
 ---
 
-Enjoy using RwikiLinks! 🚀
+Enjoy using `RWikiLinks`! 🚀
