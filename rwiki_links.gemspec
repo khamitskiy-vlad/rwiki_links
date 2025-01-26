@@ -8,17 +8,16 @@ Gem::Specification.new do |spec|
   spec.authors = ["Khamitskiy Vladislav"]
   spec.email = ["vladislaviktorovic@gmail.com"]
 
-  spec.summary = "A gem for generating citation links."
-  spec.description = "This gem helps generate citation links in a specific format."
+  spec.summary = "A gem for generating Wikipedia citation links."
+  spec.description = "This gem helps generate citation links for Wikipedia in the cite web format."
   spec.homepage = "https://github.com/khamitskiy-vlad/rwiki_links"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/khamitskiy-vlad/rwiki_links"
   spec.metadata["changelog_uri"] = "https://github.com/khamitskiy-vlad/rwiki_links/blob/main/CHANGELOG.md"
+  spec.metadata["keywords"] = %w[wikipedia wiki citation cite-web ruby gem link]
 
   gemspec = File.basename(__FILE__)
   spec.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
@@ -30,4 +29,6 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "nokogiri", "~> 1.15"
 end
