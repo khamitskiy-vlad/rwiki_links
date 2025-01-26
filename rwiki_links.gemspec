@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "A gem for generating Wikipedia citation links."
   spec.description = "This gem helps generate citation links for Wikipedia in the cite web format."
-  spec.homepage = "https://github.com/khamitskiy-vlad/rwiki_links"
+  spec.homepage = "https://github.com/khamitskiy-vlad/rwiki_links#readme"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 
