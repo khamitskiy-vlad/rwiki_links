@@ -1,43 +1,110 @@
 # RwikiLinks
 
-TODO: Delete this and the text below, and describe your gem
+RwikiLinks is a Ruby gem designed to generate citation links for news articles. The gem extracts key information such as the article title, author, publication date, and publisher, and formats it into a citation string.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rwiki_links`. To experiment with that code, run `bin/console` for an interactive prompt.
+---
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add this line to your application's Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
-
-```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+gem 'rwiki_links'
 ```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+Then execute:
 
 ```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+bundle install
 ```
+
+Or install it directly using:
+
+```bash
+gem install rwiki_links
+```
+
+---
 
 ## Usage
 
-TODO: Write usage instructions here
+### Basic Example
 
-## Development
+To generate a citation for a news article, simply pass the article's URL to the `citeweb` method:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+require 'rwiki_links'
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+url = 'https://www.vedomosti.ru/example'
+citation = RwikiLinks.citeweb(url)
+
+puts citation
+```
+
+### Output Example
+
+The output will look like this:
+
+```plaintext
+{{cite web|author=Иванов, Иван|url=https://www.vedomosti.ru/example|title=Example News Title|lang=ru|website=vedomosti.ru|publisher=Ведомости|date=2025-01-25|access-date=2025-01-26}}
+```
+
+---
+
+## Supported Websites
+
+The gem currently works well with the following Russian news websites:
+
+- **RIA Novosti** (`ria.ru`)
+- **TASS** (`tass.ru`)
+- **Kommersant** (`kommersant.ru`)
+- **RBC** (`rbc.ru`)
+- **Gazeta.ru** (`gazeta.ru`)
+- **Lenta.ru** (`lenta.ru`)
+- **Vedomosti** (`vedomosti.ru`)
+- **MK.ru** (`mk.ru`)
+- **RT** (`russian.rt.com`)
+- **News.ru** (`news.ru`)
+etc.
+
+---
+
+## How It Works
+
+RwikiLinks extracts the following information from a news article:
+
+1. **Title**: The title of the article.
+2. **Author**: The author's name (if available).
+3. **Date**: The publication date.
+4. **Publisher**: The name of the news website or organization.
+5. **Language**: The language of the article (e.g., `ru` for Russian).
+
+The gem uses Nokogiri to parse the HTML of the article and XPath to locate the required data.
+
+---
+
+## Future Plans
+
+The first version of RwikiLinks is optimized for Russian news websites. In future updates, the gem will be expanded to support more websites globally, making it a universal tool for generating citations.
+
+---
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rwiki_links. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/rwiki_links/blob/master/CODE_OF_CONDUCT.md).
+If you'd like to contribute to RWikiLinks, feel free to open an issue or submit a pull request. Contributions are welcome, especially for adding support for new websites or improving existing functionality.
+
+---
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+RwikiLinks is available under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Code of Conduct
+---
 
-Everyone interacting in the RwikiLinks project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rwiki_links/blob/master/CODE_OF_CONDUCT.md).
+## Questions?
+
+If you have any questions or need help, feel free to open an issue on GitHub or contact the maintainers.
+
+---
+
+Enjoy using RwikiLinks! 🚀
