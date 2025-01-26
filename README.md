@@ -1,4 +1,4 @@
-# RwikiLinks
+# RWikiLinks
 
 `RWikiLinks` is a Ruby gem designed to generate citation links for news articles. The gem extracts key information such as the article title, author, publication date, and publisher, and formats it into a citation string.
 
