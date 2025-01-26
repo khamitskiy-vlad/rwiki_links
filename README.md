@@ -1,6 +1,6 @@
 # RwikiLinks
 
-RwikiLinks is a Ruby gem designed to generate citation links for news articles. The gem extracts key information such as the article title, author, publication date, and publisher, and formats it into a citation string.
+`RWikiLinks` is a Ruby gem designed to generate citation links for news articles. The gem extracts key information such as the article title, author, publication date, and publisher, and formats it into a citation string.
 
 ---
 
@@ -65,7 +65,7 @@ The gem currently works well with the following Russian news websites:
 - **MK.ru** (`mk.ru`)
 - **RT** (`russian.rt.com`)
 - **News.ru** (`news.ru`)
-etc.
+- etc.
 
 ---
 
@@ -91,7 +91,7 @@ The first version of RwikiLinks is optimized for Russian news websites. In futur
 
 ## Contributing
 
-If you'd like to contribute to RWikiLinks, feel free to open an issue or submit a pull request. Contributions are welcome, especially for adding support for new websites or improving existing functionality.
+If you'd like to contribute to `RWikiLinks`, feel free to open an issue or submit a pull request. Contributions are welcome, especially for adding support for new websites or improving existing functionality.
 
 ---
 
