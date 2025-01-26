@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/khamitskiy-vlad/rwiki_links"
   spec.metadata["changelog_uri"] = "https://github.com/khamitskiy-vlad/rwiki_links/blob/main/CHANGELOG.md"
-  spec.metadata["keywords"] = %w[wikipedia wiki citation cite-web ruby gem link]
+  spec.metadata["keywords"] = "wikipedia, wiki, citation, cite-web, ruby, gem, link"
 
   gemspec = File.basename(__FILE__)
   spec.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
