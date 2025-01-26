@@ -49,11 +49,9 @@ module RwikiLinks
     end
 
     def date_from_xpath
-      if DATE_XPATHS.key?(website)
-        dig_in_existing_date_xpaths
-      else
-        try_find_date_published
-      end
+      return dig_in_existing_date_xpaths if DATE_XPATHS.key?(website)
+
+      try_find_date_published
     end
 
     def dig_in_existing_date_xpaths

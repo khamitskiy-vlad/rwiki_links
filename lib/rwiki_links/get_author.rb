@@ -39,11 +39,9 @@ module RwikiLinks
     attr_reader :page, :website
 
     def author_first_and_last_names
-      if AUTHOR_XPATHS.key?(website)
-        dig_in_existing_author_xpaths
-      else
-        ""
-      end
+      return "" unless AUTHOR_XPATHS.key?(website)
+
+      dig_in_existing_author_xpaths
     end
 
     def dig_in_existing_author_xpaths

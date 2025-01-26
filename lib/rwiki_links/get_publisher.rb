@@ -14,43 +14,41 @@ module RwikiLinks
 
     private
 
+    PUBLISHERS = {
+      "ria.ru" => "РИА Новости",
+      "pnp.ru" => "Парламентская газета",
+      "russian.rt.com" => "RT",
+      "1tv.ru" => "Первый канал",
+      "svpressa.ru" => "Свободная Пресса",
+      "ntv.ru" => "НТВ",
+      "mk.ru" => "Московский Комсомолец",
+      "rg.ru" => "Российская Газета",
+      "news.ru" => "NEWS.ru",
+      "aif.ru" => "Аргументы и Факты",
+      "gazeta.ru" => "Газета.Ru",
+      "tass.ru" => "ТАСС",
+      "kp.ru" => "Комсомольская Правда",
+      "rbc.ru" => "РБК",
+      "vc.ru" => "VC.ru",
+      "vedomosti.ru" => "Ведомости"
+    }.freeze
+    private_constant :PUBLISHERS
+
+    EXCEPTIONS = {
+      "bbc.co.uk" => "BBC",
+      "theguardian.com" => "The Guardian",
+      "nytimes.com" => "The New York Times"
+    }.freeze
+    private_constant :EXCEPTIONS
+
     attr_reader :website
 
-    def exceptions
-      {
-        "bbc.co.uk" => "BBC",
-        "theguardian.com" => "The Guardian",
-        "nytimes.com" => "The New York Times"
-      }
-    end
-
-    def publishers # rubocop:disable Metrics/MethodLength
-      {
-        "ria.ru" => "РИА Новости",
-        "pnp.ru" => "Парламентская газета",
-        "russian.rt.com" => "RT",
-        "1tv.ru" => "Первый канал",
-        "svpressa.ru" => "Свободная Пресса",
-        "ntv.ru" => "НТВ",
-        "mk.ru" => "Московский Комсомолец",
-        "rg.ru" => "Российская Газета",
-        "news.ru" => "NEWS.ru",
-        "aif.ru" => "Аргументы и Факты",
-        "gazeta.ru" => "Газета.Ru",
-        "tass.ru" => "ТАСС",
-        "kp.ru" => "Комсомольская Правда",
-        "rbc.ru" => "РБК",
-        "vc.ru" => "VC.ru",
-        "vedomosti.ru" => "Ведомости"
-      }
-    end
-
     def publisher
-      publishers[website] || publisher_from_host
+      PUBLISHERS[website] || publisher_from_host
     end
 
     def publisher_from_host
-      return exceptions[website] if exceptions.key?(website)
+      return EXCEPTIONS[website] if EXCEPTIONS.key?(website)
 
       website.sub(/^the/, "")
              .sub(/\..*$/, "")
